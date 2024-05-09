@@ -810,7 +810,7 @@ class TestDataLogReader(BZTestCase):
 
     def test_read_group_duration_default(self):
         log_path = RESOURCES_DIR + "gatling/"
-        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-6', None)  # readic group duration metric with property == None or false (default behaviour)
+        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-6', None)  # reading group duration metric with property == None or false (default behaviour)
         list_of_values = list(obj.datapoints(True))
         self.assertEqual(len(list_of_values), 9)
         self.assertEqual(obj.guessed_gatling_version, "3.4+")
@@ -819,7 +819,7 @@ class TestDataLogReader(BZTestCase):
 
     def test_read_group_duration_group(self):
         log_path = RESOURCES_DIR + "gatling/"
-        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-6', True)  # readic group duration metric with property == True
+        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-6', True)  # reading group duration metric with property == True
         list_of_values = list(obj.datapoints(True))
         self.assertEqual(len(list_of_values), 9)
         self.assertEqual(obj.guessed_gatling_version, "3.4+")
