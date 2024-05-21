@@ -784,19 +784,19 @@ class TestDataLogReader(BZTestCase):
 
     def test_guess_version_33x(self):
         log_path = RESOURCES_DIR + "gatling/"
-        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-331')
+        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-331', "cumulated")
         list(obj.datapoints(True))
         self.assertEqual(obj.guessed_gatling_version, "3.3.X")
 
     def test_guess_version_34x(self):
         log_path = RESOURCES_DIR + "gatling/"
-        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-351')
+        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-351', "cumulated")
         list(obj.datapoints(True))
         self.assertEqual(obj.guessed_gatling_version, "3.4+")
 
     def test_guess_version_310x(self):
         log_path = RESOURCES_DIR + "gatling/"
-        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-3105')
+        obj = DataLogReader(log_path, ROOT_LOGGER, 'gatling-3105', "cumulated")
         list(obj.datapoints(True))
         self.assertEqual(obj.guessed_gatling_version, "3.4+")
 
